@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeJournal — macOS 效率工具</title>
+    <meta name="description" content="FreeJournal 出品的 macOS 效率工具：BabyJournal 日志 App 和 VoiceJar 语音输入法。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">✏️</span>
+                <span>FreeJournal</span>
+            </a>
+            <div class="nav-links">
+                <a href="#babyjournal">BabyJournal</a>
+                <a href="#voicejar">VoiceJar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge">macOS 效率工具</div>
+        <h1>用更好的方式<br>记录你的想法</h1>
+        <p class="hero-sub">我们打造简洁、快速、注重隐私的 macOS 原生工具。<br>让日志和语音输入回归纯粹。</p>
+    </section>
+
+    <!-- BabyJournal -->
+    <section id="babyjournal" class="app-section">
+        <div class="app-card">
+            <div class="app-header">
+                <div class="app-icon app-icon-journal">📔</div>
+                <div>
+                    <h2>BabyJournal</h2>
+                    <p class="app-tagline">轻量日志，专注记录</p>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>即开即写</h3>
+                    <p>原生 SwiftUI 构建，启动迅速，毫无等待</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI 辅助</h3>
+                    <p>支持 Claude、DeepSeek、Gemini 等多种 AI 引擎，智能润色你的文字</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>数据本地</h3>
+                    <p>SwiftData 本地存储，你的日记只属于你</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎙️</div>
+                    <h3>语音联动</h3>
+                    <p>与 VoiceJar 无缝配合，说话即写日记</p>
+                </div>
+            </div>
+
+            <div class="app-download">
+                <a href="https://github.com/anthropics/freejournal/releases/latest/download/BabyJournal.dmg" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    下载 BabyJournal
+                </a>
+                <span class="app-meta">macOS 14.0+ · Apple Silicon & Intel</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- VoiceJar -->
+    <section id="voicejar" class="app-section">
+        <div class="app-card">
+            <div class="app-header">
+                <div class="app-icon app-icon-voice">🎤</div>
+                <div>
+                    <h2>VoiceJar</h2>
+                    <p class="app-tagline">按住说话，松开输入</p>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🗣️</div>
+                    <h3>实时识别</h3>
+                    <p>边说边出字，流式语音转文字，延迟极低</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✨</div>
+                    <h3>双模式</h3>
+                    <p>即时上屏或 AI 润色上屏，双击 Fn 自由切换</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>全局输入</h3>
+                    <p>任何应用、任何输入框，按住 Fn 即可语音输入</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔌</div>
+                    <h3>多引擎支持</h3>
+                    <p>Ollama 本地/云端、Claude、DeepSeek、Gemini 等 AI 润色引擎</p>
+                </div>
+            </div>
+
+            <div class="app-download">
+                <a href="https://github.com/anthropics/freejournal/releases/latest/download/VoiceJar.dmg" class="btn btn-primary btn-voice">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 7l4 4 4-4M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    下载 VoiceJar
+                </a>
+                <span class="app-meta">macOS 14.0+ · Apple Silicon & Intel</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用说明 -->
+    <section class="install-section">
+        <h2>安装说明</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <p>下载 .dmg 文件并打开</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <p>将 App 拖入 Applications 文件夹</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <p>首次打开时右键选择"打开"以绕过 Gatekeeper</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <p>按提示授权辅助功能、麦克风等权限</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 FreeJournal · 用心做好每一个工具</p>
+    </footer>
+</body>
+</html>
