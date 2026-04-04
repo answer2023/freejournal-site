@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — FreeJournal</title>
+    <meta name="description" content="FreeJournal 产品定价。免费试用 15 天，一次性买断。">
+    <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#fff;--bg-page:#f9fafb;--text:#111827;--text-sec:#6b7280;--text-tri:#9ca3af;--red:#b91c1c;--red-light:#fef2f2;--red-ring:#fecaca;--border:#e5e7eb;--card:#fff;--tag-bg:#f3f4f6;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-lg:0 4px 12px rgba(0,0,0,.08);--radius:12px;--max:1080px}
+    @media(prefers-color-scheme:dark){:root{--bg:#111;--bg-page:#0a0a0a;--text:#e5e5e5;--text-sec:#a3a3a3;--text-tri:#737373;--red:#ef4444;--red-light:#1f1215;--red-ring:#7f1d1d;--border:#262626;--card:#171717;--tag-bg:#262626;--shadow:0 1px 3px rgba(0,0,0,.3);--shadow-lg:0 4px 12px rgba(0,0,0,.4)}}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);font-size:15px;line-height:1.7;color:var(--text);background:var(--bg-page);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+    .nav-inner{max-width:var(--max);margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--red)}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{font-size:14px;color:var(--text-sec);transition:color .15s}
+    .nav-links a:hover{color:var(--text)}.nav-links a.active{color:var(--red)}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .divider{border:none;border-top:1px solid var(--border);margin:0}
+    .hero{padding:100px 0 56px;text-align:center}
+    .hero h1{font-size:42px;font-weight:700;letter-spacing:-.03em}
+    .hero .sub{margin-top:16px;font-size:18px;color:var(--text-sec);line-height:1.7}
+    .slabel{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-tri);margin-bottom:20px}
+    section{padding:48px 0}
+
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .pc{position:relative;padding:40px 32px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);text-align:center;transition:box-shadow .2s,border-color .2s}
+    .pc:hover{box-shadow:var(--shadow-lg)}
+    .pc-hl{border:2px solid var(--red)}
+    .pc-hl:hover{box-shadow:0 4px 16px rgba(185,28,28,.12)}
+    .pc-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:600;background:var(--red);color:#fff;padding:3px 12px;border-radius:100px}
+    .pc h3{font-size:20px;font-weight:600;margin-bottom:4px}
+    .pc .desc{font-size:14px;color:var(--text-sec);margin-bottom:24px}
+    .pc .price{font-size:48px;font-weight:700;color:var(--red);letter-spacing:-.02em}
+    .pc .note{font-size:13px;color:var(--text-tri);margin-top:6px;margin-bottom:28px}
+    .pc ul{list-style:none;text-align:left;margin-bottom:8px}
+    .pc li{font-size:14px;line-height:2.4;padding-left:20px;position:relative;color:var(--text)}
+    .pc li::before{content:'\2713';position:absolute;left:0;color:var(--red);font-weight:600;font-size:13px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;color:#fff;background:var(--red);padding:11px 28px;border-radius:8px;text-decoration:none;transition:opacity .15s;width:100%;margin-top:18px}
+    .btn:hover{opacity:.85}
+    .btn-o{background:transparent;color:var(--red);border:1.5px solid var(--red)}
+    .btn-o:hover{background:var(--red-light);opacity:1}
+
+    .faq-item{padding:18px 0;border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-item h3{font-size:15px;font-weight:600;margin-bottom:6px}
+    .faq-item p{font-size:14px;color:var(--text-sec);line-height:1.7}
+
+    .footer{padding:32px 0 48px}
+    .footer-inner{display:flex;justify-content:space-between}
+    .footer-col h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-tri);margin-bottom:10px}
+    .footer-col a{display:block;font-size:13px;color:var(--text-sec);line-height:2.2}.footer-col a:hover{color:var(--red)}
+    .footer-copy{font-size:12px;color:var(--text-tri);margin-top:24px}
+    @media(max-width:768px){.hero h1{font-size:30px}.hero{padding:64px 0 40px}.pricing-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <div class="nav"><div class="nav-inner">
+        <a href="../" class="nav-logo">FreeJournal</a>
+        <div class="nav-links"><a href="../voicejar/">VoiceJar</a><a href="../babyjournal/">BabyJournal</a><a href="../pricing/" class="active">Pricing</a></div>
+    </div></div>
+    <div class="container">
+        <div class="hero">
+            <h1>Pricing</h1>
+            <p class="sub">所有产品免费试用 15 天。<br>一次性买断，永久使用，免费更新。</p>
+        </div>
+        <hr class="divider">
+        <section>
+            <div class="pricing-grid">
+                <div class="pc">
+                    <h3>BabyJournal</h3>
+                    <p class="desc">轻量日志 App</p>
+                    <div class="price">&yen;68</div>
+                    <p class="note">一次性买断</p>
+                    <ul><li>原生 SwiftUI</li><li>数据本地存储</li><li>AI 辅助写作</li><li>免费更新</li></ul>
+                    <a href="#" class="btn btn-o">购买</a>
+                </div>
+                <div class="pc pc-hl">
+                    <div class="pc-badge">推荐</div>
+                    <h3>套装</h3>
+                    <p class="desc">VoiceJar + BabyJournal</p>
+                    <div class="price">&yen;128</div>
+                    <p class="note">一次性买断 · 省 &yen;38</p>
+                    <ul><li>两个 App 全部功能</li><li>语音直接写日记</li><li>免费更新</li></ul>
+                    <a href="#" class="btn">购买套装</a>
+                </div>
+                <div class="pc">
+                    <h3>VoiceJar</h3>
+                    <p class="desc">macOS 语音输入法</p>
+                    <div class="price">&yen;98</div>
+                    <p class="note">一次性买断</p>
+                    <ul><li>全局语音输入</li><li>实时流式识别</li><li>AI 润色（多引擎）</li><li>免费更新</li></ul>
+                    <a href="#" class="btn btn-o">购买</a>
+                </div>
+            </div>
+        </section>
+        <hr class="divider">
+        <section>
+            <p class="slabel">FAQ</p>
+            <div>
+                <div class="faq-item"><h3>试用期有功能限制吗？</h3><p>没有。15 天内所有功能完全开放，和付费版完全一样。</p></div>
+                <div class="faq-item"><h3>支持哪些支付方式？</h3><p>支持信用卡、支付宝、微信支付。</p></div>
+                <div class="faq-item"><h3>买断后还能更新吗？</h3><p>可以。当前大版本内所有更新免费。</p></div>
+                <div class="faq-item"><h3>可以退款吗？</h3><p>购买后 7 天内无理由退款。</p></div>
+                <div class="faq-item"><h3>可以在几台电脑上使用？</h3><p>每个许可证支持 2 台设备。</p></div>
+            </div>
+        </section>
+        <hr class="divider">
+        <div class="footer"><div class="footer-inner">
+            <div class="footer-col"><h4>Products</h4><a href="../voicejar/">VoiceJar</a><a href="../babyjournal/">BabyJournal</a></div>
+            <div class="footer-col"><h4>Links</h4><a href="../pricing/">Pricing</a><a href="mailto:hi@freejournal.app">Contact</a></div>
+        </div><p class="footer-copy">&copy; 2026 FreeJournal</p></div>
+    </div>
+</body>
+</html>

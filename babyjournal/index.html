@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabyJournal — 轻量日志 App</title>
+    <meta name="description" content="轻量日志，专注记录。原生 macOS 应用，数据本地存储，AI 辅助写作。">
+    <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#fff;--bg-page:#f9fafb;--text:#111827;--text-sec:#6b7280;--text-tri:#9ca3af;--red:#b91c1c;--red-light:#fef2f2;--red-ring:#fecaca;--border:#e5e7eb;--card:#fff;--tag-bg:#f3f4f6;--tag-text:#374151;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-lg:0 4px 12px rgba(0,0,0,.08);--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--mono:'SF Mono',Monaco,monospace;--radius:12px;--max:1080px}
+    @media(prefers-color-scheme:dark){:root{--bg:#111;--bg-page:#0a0a0a;--text:#e5e5e5;--text-sec:#a3a3a3;--text-tri:#737373;--red:#ef4444;--red-light:#1f1215;--red-ring:#7f1d1d;--border:#262626;--card:#171717;--tag-bg:#262626;--tag-text:#d4d4d4;--shadow:0 1px 3px rgba(0,0,0,.3);--shadow-lg:0 4px 12px rgba(0,0,0,.4)}}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);font-size:15px;line-height:1.7;color:var(--text);background:var(--bg-page);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .nav{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+    .nav-inner{max-width:var(--max);margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-size:16px;font-weight:700;color:var(--red)}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{font-size:14px;color:var(--text-sec);transition:color .15s}
+    .nav-links a:hover{color:var(--text)}.nav-links a.active{color:var(--red)}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .divider{border:none;border-top:1px solid var(--border);margin:0}
+    .hero{padding:100px 0 56px;text-align:center}
+    .hero h1{font-size:42px;font-weight:700;letter-spacing:-.03em}
+    .hero .sub{margin-top:16px;font-size:18px;color:var(--text-sec);line-height:1.7}
+    .hero .dl{margin-top:32px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#fff;background:var(--red);padding:11px 28px;border-radius:8px;text-decoration:none;transition:opacity .15s}
+    .btn:hover{opacity:.85}.btn svg{width:15px;height:15px}
+    .meta{font-size:12px;color:var(--text-tri)}
+    .slabel{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-tri);margin-bottom:20px}
+    section{padding:48px 0}
+    .features{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+    .fc{padding:28px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);transition:box-shadow .2s,border-color .2s}
+    .fc:hover{border-color:var(--red-ring);box-shadow:var(--shadow)}
+    .fc h3{font-size:15px;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+    .fc h3 span{font-size:18px}.fc p{font-size:14px;color:var(--text-sec);line-height:1.7}
+    .fc .tag-row{display:flex;gap:5px;margin-top:10px}
+    .tag{font-size:11px;color:var(--tag-text);background:var(--tag-bg);padding:2px 8px;border-radius:5px}
+    ol.gs{padding-left:20px;margin-top:12px}
+    ol.gs li{font-size:14px;line-height:2.2;color:var(--text)}
+    code{font-family:var(--mono);font-size:12px;background:var(--tag-bg);padding:2px 6px;border-radius:4px}
+    .cta-card{text-align:center;padding:40px 32px;background:var(--red-light);border:1px solid var(--border);border-radius:var(--radius)}
+    .cta-card p.slabel{margin-bottom:8px}.cta-card p.desc{font-size:15px;color:var(--text-sec);margin-bottom:20px}
+    .footer{padding:32px 0 48px}
+    .footer-inner{display:flex;justify-content:space-between}
+    .footer-col h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text-tri);margin-bottom:10px}
+    .footer-col a{display:block;font-size:13px;color:var(--text-sec);line-height:2.2}.footer-col a:hover{color:var(--red)}
+    .footer-copy{font-size:12px;color:var(--text-tri);margin-top:24px}
+    @media(max-width:768px){.hero h1{font-size:30px}.hero{padding:64px 0 40px}.features{grid-template-columns:1fr}.hero .dl{flex-direction:column}}
+    @media(min-width:769px) and (max-width:960px){.features{grid-template-columns:1fr 1fr}}
+    </style>
+</head>
+<body>
+    <div class="nav"><div class="nav-inner">
+        <a href="../" class="nav-logo">FreeJournal</a>
+        <div class="nav-links"><a href="../voicejar/">VoiceJar</a><a href="../babyjournal/" class="active">BabyJournal</a><a href="../pricing/">Pricing</a></div>
+    </div></div>
+    <div class="container">
+        <div class="hero">
+            <h1>BabyJournal</h1>
+            <p class="sub">轻量日志，专注记录。<br>打开就写，关掉就走。</p>
+            <div class="dl">
+                <a href="#" class="btn"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 7l4 4 4-4M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for macOS</a>
+                <span class="meta">免费试用 15 天&ensp;·&ensp;macOS 14.0+</span>
+            </div>
+        </div>
+        <hr class="divider">
+        <section>
+            <p class="slabel">Features</p>
+            <div class="features">
+                <div class="fc"><h3><span>⚡</span> 即开即写</h3><p>原生 SwiftUI 构建，启动迅速。没有加载画面，打开就是编辑器。</p><div class="tag-row"><span class="tag">#native</span><span class="tag">#fast</span></div></div>
+                <div class="fc"><h3><span>🔒</span> 数据本地</h3><p>SwiftData 本地存储，你的日记只属于你。不依赖任何云服务。</p><div class="tag-row"><span class="tag">#privacy</span><span class="tag">#offline</span></div></div>
+                <div class="fc"><h3><span>🤖</span> AI 辅助</h3><p>支持 Claude、DeepSeek、Gemini 等多种 AI 引擎，帮你润色文字、整理思路。</p><div class="tag-row"><span class="tag">#multi-engine</span><span class="tag">#ai-writing</span></div></div>
+                <div class="fc"><h3><span>🎙</span> 语音联动</h3><p>与 VoiceJar 无缝配合 — 说话即写日记。URL Scheme 自动传输文字。</p><div class="tag-row"><span class="tag">#voicejar</span><span class="tag">#url-scheme</span></div></div>
+                <div class="fc"><h3><span>🧹</span> 极简设计</h3><p>没有多余功能，没有社交分享，没有花哨模板。只有你和你的文字。</p><div class="tag-row"><span class="tag">#minimal</span><span class="tag">#focused</span></div></div>
+                <div class="fc"><h3><span>🔍</span> 快速检索</h3><p>全文搜索，按日期、标签筛选。写过的每一个字都能快速找回。</p><div class="tag-row"><span class="tag">#search</span><span class="tag">#tags</span></div></div>
+            </div>
+        </section>
+        <hr class="divider">
+        <section>
+            <p class="slabel">Getting Started</p>
+            <ol class="gs">
+                <li>下载 <code>.dmg</code> 并打开，将 BabyJournal 拖入 Applications</li>
+                <li>首次打开右键选择「打开」</li>
+                <li>开始写你的第一篇日记</li>
+            </ol>
+        </section>
+        <hr class="divider">
+        <section>
+            <div class="cta-card">
+                <p class="slabel">Pricing</p>
+                <p class="desc">免费试用 15 天，之后一次性买断，永久使用。</p>
+                <a href="../pricing/" class="btn">查看定价 &rarr;</a>
+            </div>
+        </section>
+        <hr class="divider">
+        <div class="footer"><div class="footer-inner">
+            <div class="footer-col"><h4>Products</h4><a href="../voicejar/">VoiceJar</a><a href="../babyjournal/">BabyJournal</a></div>
+            <div class="footer-col"><h4>Links</h4><a href="../pricing/">Pricing</a><a href="mailto:hi@freejournal.app">Contact</a></div>
+        </div><p class="footer-copy">&copy; 2026 FreeJournal</p></div>
+    </div>
+</body>
+</html>
