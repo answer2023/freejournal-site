@@ -34,7 +34,7 @@
                     <svg viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 7l4 4 4-4M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     Download for macOS
                 </a>
-                <span class="meta">免费试用 15 天&ensp;·&ensp;macOS 14.0+</span>
+                <span class="meta">v0.2.0&ensp;·&ensp;免费试用 15 天&ensp;·&ensp;macOS 14.0+</span>
             </div>
         </div>
 
@@ -115,6 +115,36 @@
                 <li>按引导授权辅助功能、麦克风、语音识别</li>
                 <li>按住 Fn，开始说话</li>
             </ol>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <p class="slabel">What's New</p>
+            <div class="changelog">
+                <div class="cl-entry">
+                    <h3>v0.2.0 <span class="cl-date">2026-04-07</span></h3>
+                    <ul>
+                        <li>统一日志系统，使用 os.Logger + 串行队列，减少 I/O 开销</li>
+                        <li>菜单栏图标改为状态驱动刷新，不再每 0.3 秒轮询</li>
+                        <li>修复浮窗在部分 App 中的潜在崩溃（AX API 安全转换）</li>
+                        <li>修复 Keychain 存储 API Key 的强制解包问题</li>
+                        <li>修复 Swift 6 严格并发模式下的线程安全警告</li>
+                        <li>代码质量全面优化，零 warning 编译通过</li>
+                    </ul>
+                </div>
+                <div class="cl-entry">
+                    <h3>v0.1.0 <span class="cl-date">2026-04-03</span></h3>
+                    <ul>
+                        <li>首个发布版本</li>
+                        <li>流式实时语音识别</li>
+                        <li>全局快捷键（Fn / 自定义组合键）</li>
+                        <li>双模式：即时上屏 / AI 润色上屏</li>
+                        <li>支持 Ollama、Claude、DeepSeek、Gemini 等多引擎</li>
+                        <li>浮窗跟随光标，毛玻璃设计</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <hr class="divider">

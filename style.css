@@ -435,6 +435,54 @@ code {
     font-size: 13px;
 }
 
+/* ===== Changelog ===== */
+
+.changelog { margin-top: 8px }
+
+.cl-entry {
+    padding: 20px 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+}
+
+.cl-entry h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cl-date {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-tri);
+}
+
+.cl-entry ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cl-entry li {
+    font-size: 13px;
+    color: var(--text-sec);
+    line-height: 2;
+    padding-left: 18px;
+    position: relative;
+}
+
+.cl-entry li::before {
+    content: '\2022';
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: 700;
+}
+
 /* ===== CTA Card ===== */
 
 .cta-card {
