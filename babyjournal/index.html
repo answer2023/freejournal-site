@@ -31,7 +31,7 @@
             <p class="sub">轻量日志，专注记录。<br>打开就写，关掉就走。</p>
             <div class="dl">
                 <span class="btn" style="opacity:.5;cursor:default;pointer-events:none">Coming Soon</span>
-                <span class="meta">正在打磨中，敬请期待</span>
+                <span class="meta">v1.1.0 &middot; 正在打磨中，敬请期待</span>
             </div>
         </div>
 
@@ -58,6 +58,38 @@
                 <li>首次打开右键选择「打开」</li>
                 <li>开始写你的第一篇日记</li>
             </ol>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <p class="slabel">What's New</p>
+            <div class="changelog">
+                <div class="cl-entry">
+                    <h3>v1.1.0 <span class="cl-date">2026-04-08</span></h3>
+                    <ul>
+                        <li>修复 AI 服务地址输入错误时的崩溃问题（URL 安全校验）</li>
+                        <li>AI 请求增加 HTTP 状态码检查，API 异常时显示明确错误信息</li>
+                        <li>AI 服务改为全局单例，停止生成按钮现在能正确停止所有请求</li>
+                        <li>修复潜在的第三方库冲突（移除全局 String: Identifiable 扩展）</li>
+                        <li>优化列表滚动性能（DateFormatter 静态缓存，减少 GC 压力）</li>
+                        <li>macOS 照片压缩现在正确尊重文件大小限制</li>
+                        <li>精简重复代码（统一 Hex 颜色解析）</li>
+                    </ul>
+                </div>
+                <div class="cl-entry">
+                    <h3>v1.0.0 <span class="cl-date">2026-04-06</span></h3>
+                    <ul>
+                        <li>首个发布版本</li>
+                        <li>SwiftUI + SwiftData 原生构建，支持 iOS / macOS</li>
+                        <li>笔记本管理、标签、照片、Markdown 编辑</li>
+                        <li>AI 对话助手，支持 Claude、DeepSeek、Gemini、千问等多引擎</li>
+                        <li>本地 MLX 模型推理，完全离线 AI</li>
+                        <li>PDF / Markdown 导出</li>
+                        <li>8 套主题配色 + 5 级字号调节</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <hr class="divider">
