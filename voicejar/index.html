@@ -35,7 +35,7 @@
                     <svg viewBox="0 0 16 16" fill="none"><path d="M8 1v10M4 7l4 4 4-4M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     Download for macOS
                 </a>
-                <span class="meta">v0.2.0&ensp;·&ensp;免费试用 15 天&ensp;·&ensp;macOS 14.0+</span>
+                <span class="meta">v0.3.0&ensp;·&ensp;免费试用 15 天&ensp;·&ensp;macOS 14.0+</span>
             </div>
         </div>
 
@@ -123,6 +123,17 @@
         <section>
             <p class="slabel">What's New</p>
             <div class="changelog">
+                <div class="cl-entry">
+                    <h3>v0.3.0 <span class="cl-date">2026-04-08</span></h3>
+                    <ul>
+                        <li>点击菜单栏图标直接打开设置，右键显示快捷菜单（一步到位）</li>
+                        <li>修复 CGEvent 回调内存泄漏（passRetained → passUnretained）</li>
+                        <li>Fn 键不再被拦截，其他 App 的 Fn 功能恢复正常</li>
+                        <li>修复 CGEvent tap + NSEvent monitor 双重触发问题</li>
+                        <li>浮窗波形动画隐藏时不再空转，减少 CPU 占用</li>
+                        <li>日志输出统一为 NSLog，release 构建不再丢失错误信息</li>
+                    </ul>
+                </div>
                 <div class="cl-entry">
                     <h3>v0.2.0 <span class="cl-date">2026-04-07</span></h3>
                     <ul>
