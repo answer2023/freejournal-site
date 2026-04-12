@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing — FreeJournal</title>
-    <meta name="description" content="FreeJournal 所有产品完全免费，无广告，无订阅，无隐藏收费。">
+    <title>定价 — FreeJournal | 所有产品完全免费</title>
+    <meta name="description" content="FreeJournal 所有产品完全免费，无广告，无订阅，无隐藏收费。VoiceJar 语音输入法和 BabyJournal 日记应用，所有功能开箱即用。">
+    <meta name="keywords" content="免费macOS工具,免费语音输入法,免费日记app,无广告,无订阅,独立开发">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <meta property="og:title" content="Pricing — FreeJournal">
+    <link rel="canonical" href="https://freejournal.app/pricing/">
+    <meta property="og:title" content="定价 — FreeJournal | 所有产品完全免费">
     <meta property="og:description" content="所有产品完全免费。没有试用期，没有功能阉割，没有弹窗催你付费。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://freejournal.app/pricing/">
     <meta property="og:image" content="https://freejournal.app/og-image.svg">
+    <meta property="og:site_name" content="FreeJournal">
+    <meta property="og:locale" content="zh_CN">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="定价 — FreeJournal | 所有产品完全免费">
+    <meta name="twitter:description" content="所有产品完全免费，无广告，无订阅，无隐藏收费。">
+    <meta name="twitter:image" content="https://freejournal.app/og-image.svg">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -35,6 +42,7 @@
         <hr class="divider">
 
         <section>
+            <h2 class="slabel visually-hidden">产品定价</h2>
             <div class="pricing-grid">
                 <div class="pc">
                     <h3>VoiceJar</h3>
@@ -59,7 +67,7 @@
         <hr class="divider">
 
         <section>
-            <p class="slabel">Why free</p>
+            <h2 class="slabel">Why free</h2>
             <div class="values">
                 <div class="value-item">
                     <h3>一个人的工具，分享给需要的人</h3>
@@ -79,10 +87,11 @@
         <hr class="divider">
 
         <section>
-            <p class="slabel">FAQ</p>
+            <h2 class="slabel">FAQ</h2>
             <div>
                 <div class="faq-item"><h3>真的完全免费吗？</h3><p>是的。没有试用期，没有高级版，没有内购。所有功能开箱即用。</p></div>
                 <div class="faq-item"><h3>以后会收费吗？</h3><p>目前没有收费计划。如果将来推出付费功能，现有的免费功能不会被削减。</p></div>
+                <div class="faq-item"><h3>为什么不做收费功能？</h3><p>这些工具是我自己在用的，分享出来是因为我觉得好工具不该被价格挡住。如果将来推出高级功能，现有的所有功能保证永远免费。</p></div>
                 <div class="faq-item"><h3>AI 功能需要额外付费吗？</h3><p>App 不收费。AI 润色和翻译使用你自己配置的 API（如 DeepSeek、Gemini 等），费用由对应平台收取，与我们无关。本地 Ollama 模型完全免费。</p></div>
                 <div class="faq-item"><h3>我的数据安全吗？</h3><p>所有数据存储在你的设备本地。我们不运营任何服务器，无法接触你的任何数据。</p></div>
                 <div class="faq-item"><h3>如何支持这个项目？</h3><p>用它、分享它、提建议。如果你觉得好用，告诉一个朋友就是最好的支持。</p></div>
@@ -91,11 +100,36 @@
 
         <hr class="divider">
 
+        <section>
+            <div class="cta-share">
+                <h2>觉得好用？告诉一个朋友就是最好的支持。</h2>
+                <p class="desc">把 FreeJournal 分享给可能需要的人。</p>
+                <button class="btn" onclick="copyShareLink()">
+                    <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px"><path d="M4 8h8M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    复制链接分享
+                </button>
+                <span class="share-toast" id="shareToast">已复制到剪贴板</span>
+            </div>
+        </section>
+
+        <hr class="divider">
+
         <div class="footer"><div class="footer-inner">
             <div class="footer-col"><h4>Products</h4><a href="../voicejar/">VoiceJar</a><a href="../babyjournal/">BabyJournal</a></div>
-            <div class="footer-col"><h4>Links</h4><a href="../pricing/">Pricing</a><a href="mailto:hi@freejournal.app">Contact</a></div>
+            <div class="footer-col"><h4>Links</h4><a href="../pricing/">Pricing</a><a href="../privacy.html">Privacy</a><a href="mailto:hi@freejournal.app">Contact</a></div>
         </div><p class="footer-copy">&copy; 2026 FreeJournal</p></div>
 
     </div>
+
+    <script>
+    function copyShareLink() {
+        var text = 'FreeJournal — 免费、原生、注重隐私的 macOS 工具。VoiceJar 语音输入法 + BabyJournal 轻量日记。https://freejournal.app';
+        navigator.clipboard.writeText(text).then(function() {
+            var toast = document.getElementById('shareToast');
+            toast.classList.add('show');
+            setTimeout(function() { toast.classList.remove('show'); }, 2000);
+        });
+    }
+    </script>
 </body>
 </html>
