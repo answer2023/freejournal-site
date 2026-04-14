@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://freejournal.app/sitemap.xml
+Sitemap: https://tangzhihong.com/sitemap.xml
