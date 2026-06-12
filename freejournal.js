@@ -207,7 +207,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   className: "btn btn-ghost"
 }, "Read the story")), /*#__PURE__*/React.createElement("div", {
   className: "product-hero-meta"
-}, "JotBee v1.1.0 \xB7 iOS 17.0+ \xB7 macOS 14.0+ \xB7 Always free")), /*#__PURE__*/React.createElement("div", {
+}, "JotBee v1.2.0 \xB7 iOS 17.0+ \xB7 macOS 14.0+ \xB7 Always free")), /*#__PURE__*/React.createElement("div", {
   className: "devices-row",
   style: {
     maxWidth: "720px",
@@ -316,6 +316,10 @@ const Stats = () => /*#__PURE__*/React.createElement("section", {
 }, "no IAP, no ads, ever")))));
 const FeaturesGrid = () => {
   const items = [{
+    icon: "bolt",
+    title: "Weather, remembered",
+    desc: "Each entry automatically captures the weather and temperature of the moment you wrote it."
+  }, {
     icon: "mic",
     title: "Voice to text",
     desc: "Hold to talk, release to text. Pairs with VoiceBee for instant dictation."
