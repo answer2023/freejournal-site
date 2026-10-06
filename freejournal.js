@@ -164,7 +164,7 @@ const SubNav = () => /*#__PURE__*/React.createElement("div", {
 }, /*#__PURE__*/React.createElement("span", {
   className: "subnav-name"
 }, /*#__PURE__*/React.createElement("img", {
-  src: "assets/jotbee-icon.png",
+  src: "assets/jotbee-icon-512.png",
   alt: ""
 }), " JotBee \xB7 freejournal.app"), /*#__PURE__*/React.createElement("div", {
   className: "subnav-links"
@@ -189,7 +189,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
 }, /*#__PURE__*/React.createElement("div", {
   className: "product-hero"
 }, /*#__PURE__*/React.createElement("img", {
-  src: "assets/jotbee-icon.png",
+  src: "assets/jotbee-icon-512.png",
   alt: "JotBee",
   className: "product-hero-icon"
 }), /*#__PURE__*/React.createElement("h1", null, "A free journal,", /*#__PURE__*/React.createElement("br", null), "that just lets you write."), /*#__PURE__*/React.createElement("p", {
