@@ -207,7 +207,7 @@ const Hero = () => /*#__PURE__*/React.createElement("section", {
   className: "btn btn-ghost"
 }, "Read the story")), /*#__PURE__*/React.createElement("div", {
   className: "product-hero-meta"
-}, "JotBee v1.2.0 \xB7 iOS 17.0+ \xB7 macOS 14.0+ \xB7 Always free")), /*#__PURE__*/React.createElement("div", {
+}, "JotBee v1.2.3 \xB7 iOS 17.0+ \xB7 macOS 14.0+ \xB7 Always free")), /*#__PURE__*/React.createElement("div", {
   className: "devices-row",
   style: {
     maxWidth: "720px",
@@ -305,7 +305,7 @@ const Stats = () => /*#__PURE__*/React.createElement("section", {
   className: "stat"
 }, /*#__PURE__*/React.createElement("div", {
   className: "stat-num"
-}, "7+"), /*#__PURE__*/React.createElement("div", {
+}, "5"), /*#__PURE__*/React.createElement("div", {
   className: "stat-label"
 }, "AI engines, your choice")), /*#__PURE__*/React.createElement("div", {
   className: "stat"
@@ -318,7 +318,7 @@ const FeaturesGrid = () => {
   const items = [{
     icon: "bolt",
     title: "Weather, remembered",
-    desc: "Each entry automatically captures the weather and temperature of the moment you wrote it."
+    desc: "Switch it on and each entry keeps the weather and temperature of the moment you wrote it."
   }, {
     icon: "mic",
     title: "Voice to text",
@@ -350,11 +350,19 @@ const FeaturesGrid = () => {
   }, {
     icon: "image",
     title: "Photo entries",
-    desc: "Capture a moment with a photo, alongside your words."
+    desc: "One photo shows large, several fall into a tidy grid, with your words underneath."
+  }, {
+    icon: "sparkle",
+    title: "Write into the past",
+    desc: "Missed a day? Pick a date before you write, or change the date of an entry later."
+  }, {
+    icon: "doc",
+    title: "Notebooks, your way",
+    desc: "Drag notebooks into any order. Merge one into another without losing an entry."
   }, {
     icon: "lock",
     title: "Local-first",
-    desc: "Entries are stored locally. We don&rsquo;t run a server. We can&rsquo;t see your data."
+    desc: "Entries are stored locally. We don\u2019t run a server. We can\u2019t see your data."
   }];
   return /*#__PURE__*/React.createElement("section", {
     id: "features",
@@ -493,7 +501,7 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
 }, "Download")), /*#__PURE__*/React.createElement("div", {
   className: "footer-col"
 }, /*#__PURE__*/React.createElement("h4", null, "Other apps"), /*#__PURE__*/React.createElement("a", {
-  href: "https://voicebee.app"
+  href: "https://jotbee.app/voicebee.html"
 }, "VoiceBee"), /*#__PURE__*/React.createElement("a", {
   href: "https://jotbee.app"
 }, "JotBee \u4E2D\u6587")), /*#__PURE__*/React.createElement("div", {
